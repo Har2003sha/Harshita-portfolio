@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ms. Harshita Sharma | Jr. Data Scientist Portfolio{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="bi bi-person-circle"></i> Ms. Harshita Sharma
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' or request.path == '/home' %}active{% endif %}" href="/">
+                            <i class="bi bi-house-fill"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/info' %}active{% endif %}" href="/info">
+                            <i class="bi bi-info-circle-fill"></i> Information
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/aboutme' %}active{% endif %}" href="/aboutme">
+                            <i class="bi bi-file-person-fill"></i> About Me
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/projects' %}active{% endif %}" href="/projects">
+                            <i class="bi bi-briefcase-fill"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="/contact">
+                            <i class="bi bi-envelope-fill"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5><i class="bi bi-person"></i> About</h5>
+                    <p>
+                        Ms. Harshita Sharma – Jr. Data Scientist dedicated to delivering 
+                        innovative, data-driven solutions that create measurable impact.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5><i class="bi bi-link-45deg"></i> Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="/projects" class="text-light text-decoration-none">Projects</a></li>
+                        <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="bi bi-chat-heart-fill"></i> Connect</h5>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/harshita-sharma-711b3123b/" class="text-light me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Har2003sha" class="text-light me-3"><i class="bi bi-github"></i></a>
+                        <a href="https://www.instagram.com/ai.with_crazzyyy?igsh=czFyaDBpMnI4ZW9z" class="text-light"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="text-center mb-0">
+                &copy; 2026 Ms. Harshita Sharma. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
+

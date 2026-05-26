@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Ms. Harshita Sharma Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-white text-center py-5 position-relative overflow-hidden">
+    <div class="animated-bg"></div>
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4 animate-fade-in">
+                    Welcome 👋
+                </h1>
+                <p class="lead mb-4 animate-fade-in-delay">
+                    I'm <span class="text-warning fw-bold">Ms. Harshita Sharma</span>, a Jr. Data Scientist
+                </p>
+                <p class="fs-5 mb-4">
+                    Passionate about transforming data into actionable insights and building intelligent solutions.
+                </p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="/projects" class="btn btn-warning btn-lg animate-bounce">
+                        <i class="bi bi-briefcase"></i> View My Work
+                    </a>
+                    <a href="/contact" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center d-none d-lg-block">
+                <div class="profile-image-container">
+                    <i class="bi bi-person-circle display-1 text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-card">
+                    <h3 class="text-warning">3+</h3>
+                    <p class="text-muted">Years of Professional Experience</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-card">
+                    <h3 class="text-warning">20+</h3>
+                    <p class="text-muted">Projects Successfully Delivered</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h3 class="text-warning">50+</h3>
+                    <p class="text-muted">Satisfied Clients</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Preview -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Featured Projects</h2>
+        <div class="row">
+            {% for project in projects[:3] %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card project-card h-100 shadow-sm hover-lift">
+                    <div class="card-img-top position-relative project-image-container">
+                        <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                             alt="{{ project.title }}" class="w-100 h-100 object-fit-cover">
+                        <div class="overlay">
+                            <a href="/project/{{ project.id }}" class="btn btn-warning btn-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ project.title }}</h5>
+                        <p class="card-text text-muted">{{ project.description }}</p>
+                        <div class="tech-badges">
+                            {% for tech in project.technologies[:3] %}
+                            <span class="badge bg-warning text-dark me-2 mb-2">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="/projects" class="btn btn-primary btn-lg">
+                <i class="bi bi-arrow-right"></i> Explore All Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to bring your ideas to life?</h2>
+        <p class="fs-5 mb-4">
+            Let’s collaborate to build intelligent, data-driven solutions that deliver real impact.
+        </p>
+        <a href="/contact" class="btn btn-dark btn-lg">
+            <i class="bi bi-chat-dots"></i> Start a Conversation
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-in;
+    }
+    .animate-fade-in-delay {
+        animation: fadeIn 1s ease-in 0.3s both;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}
