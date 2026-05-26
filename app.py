@@ -49,7 +49,8 @@ This project predicts the chances of heart disease using machine learning algori
             'Dashboard Design'
         ],
 
-        'image': 'road accident.jpg',
+        # IMPORTANT FIX
+        'image': 'road_accident.jpg',
 
         'github': 'https://github.com/Har2003sha/Road-Accidents-Analysis.git',
 
@@ -88,7 +89,7 @@ This AI-powered system detects and monitors crowds in real-time using YOLOv8 and
 ]
 
 # =========================================================
-# ROUTES
+# HOME PAGE
 # =========================================================
 
 @app.route('/')
@@ -98,17 +99,29 @@ def home():
     return render_template('home.html')
 
 
+# =========================================================
+# INFO PAGE
+# =========================================================
+
 @app.route('/info')
 
 def info():
     return render_template('info.html')
 
 
+# =========================================================
+# ABOUT PAGE
+# =========================================================
+
 @app.route('/aboutme')
 
 def aboutme():
     return render_template('aboutme.html')
 
+
+# =========================================================
+# PROJECTS PAGE
+# =========================================================
 
 @app.route('/projects')
 
@@ -119,6 +132,10 @@ def projects_page():
         projects=projects
     )
 
+
+# =========================================================
+# PROJECT DETAIL PAGE
+# =========================================================
 
 @app.route('/project/<int:project_id>')
 
@@ -138,6 +155,10 @@ def project_detail(project_id):
 
     return "Project Not Found", 404
 
+
+# =========================================================
+# CONTACT PAGE
+# =========================================================
 
 @app.route('/contact')
 

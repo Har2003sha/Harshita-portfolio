@@ -1,50 +1,47 @@
 {% extends "base.html" %}
 
-{% block title %}{{ project.title }}{% endblock %}
+{% block title %}
+{{ project.title }}
+{% endblock %}
 
 {% block content %}
 
 <div class="container py-5">
 
-    <!-- BACK BUTTON -->
+    <!-- Back Button -->
 
-    <a href="/projects"
-       class="btn btn-outline-dark mb-4">
-
+    <a href="/projects" class="btn btn-outline-dark mb-4">
         <i class="bi bi-arrow-left"></i>
         Back to Projects
-
     </a>
 
     <div class="row align-items-center">
 
-        <!-- IMAGE -->
+        <!-- Project Image -->
 
         <div class="col-lg-6 mb-4">
 
-            <img src="{{ url_for('static', filename='images/' + project.image) }}"
-                 alt="{{ project.title }}"
-                 class="img-fluid rounded shadow-lg project-detail-image">
+            <img 
+                src="{{ url_for('static', filename='images/' ~ project.image) }}"
+                alt="{{ project.title }}"
+                class="img-fluid rounded shadow-lg project-detail-image"
+            >
 
         </div>
 
-        <!-- DETAILS -->
+        <!-- Project Details -->
 
         <div class="col-lg-6">
 
             <h1 class="fw-bold text-warning mb-4">
-
                 {{ project.title }}
-
             </h1>
 
             <p class="lead text-muted mb-4">
-
                 {{ project.description }}
-
             </p>
 
-            <!-- TECHNOLOGIES -->
+            <!-- Technologies -->
 
             <h4 class="fw-bold mb-3">
                 Technologies Used
@@ -55,16 +52,14 @@
                 {% for tech in project.technologies %}
 
                 <span class="badge bg-warning text-dark me-2 mb-2 p-2">
-
                     {{ tech }}
-
                 </span>
 
                 {% endfor %}
 
             </div>
 
-            <!-- OVERVIEW -->
+            <!-- Overview -->
 
             <div class="card border-0 shadow-sm p-4 mb-4">
 
@@ -73,22 +68,20 @@
                 </h4>
 
                 <p class="text-muted">
-
                     {{ project.details }}
-
                 </p>
 
             </div>
 
-            <!-- GITHUB BUTTON -->
+            <!-- GitHub Button -->
 
-            <a href="{{ project.github }}"
-               target="_blank"
-               class="btn btn-dark btn-lg">
-
+            <a 
+                href="{{ project.github }}"
+                target="_blank"
+                class="btn btn-dark btn-lg"
+            >
                 <i class="bi bi-github"></i>
                 View Source Code
-
             </a>
 
         </div>
@@ -103,6 +96,7 @@
     width:100%;
     height:450px;
     object-fit:cover;
+    border-radius:20px;
 }
 
 .btn-dark{
