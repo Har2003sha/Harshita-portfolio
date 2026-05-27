@@ -2,129 +2,95 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# =========================================================
+# =========================
 # PROJECT DATA
-# =========================================================
+# =========================
 
 projects = [
 
     {
-        'id': 1,
+        "id": 1,
 
-        'title': 'Heart Attack Prediction System',
+        "title": "Heart Attack Prediction System",
 
-        'description': 'Machine learning based healthcare prediction system for heart disease analysis.',
+        "description":
+        "Machine learning based healthcare prediction system.",
 
-        'technologies': [
-            'Python',
-            'Flask',
-            'Machine Learning',
-            'Scikit-learn',
-            'HTML',
-            'CSS',
-            'Bootstrap'
+        "technologies": [
+            "Python",
+            "Flask",
+            "Machine Learning",
+            "Scikit-learn"
         ],
 
-        'image': 'heart.jpg',
+        "image": "heart.jpg",
 
-        'github': 'https://github.com/Har2003sha/heart-disease-prediction.git',
+        "github":
+        "https://github.com/Har2003sha/heart-disease-prediction.git",
 
-        'details': '''
-This project predicts the chances of heart disease using machine learning algorithms based on patient medical records and health parameters.
-        '''
+        "details":
+        "Heart disease prediction using Machine Learning algorithms and Flask framework."
     },
 
     {
-        'id': 2,
+        "id": 2,
 
-        'title': 'Road Accident Analysis',
+        "title": "Road Accident Analysis",
 
-        'description': 'Interactive Power BI dashboard for road accident and casualty analysis.',
+        "description":
+        "Power BI dashboard for accident analysis.",
 
-        'technologies': [
-            'Power BI',
-            'Excel',
-            'DAX',
-            'Data Analytics',
-            'Dashboard Design'
+        "technologies": [
+            "Power BI",
+            "Excel",
+            "DAX"
         ],
 
-        # IMPORTANT FIX
-        'image': 'road_accident.jpg',
+        "image": "road_accident.jpg",
 
-        'github': 'https://github.com/Har2003sha/Road-Accidents-Analysis.git',
+        "github":
+        "https://github.com/Har2003sha/Road-Accidents-Analysis.git",
 
-        'details': '''
-This Power BI dashboard analyzes road accident datasets to identify accident severity and casualty trends.
-        '''
+        "details":
+        "Road accident analysis dashboard using Power BI and Excel."
     },
 
     {
-        'id': 3,
+        "id": 3,
 
-        'title': 'Crowd Management System',
+        "title": "Crowd Management System",
 
-        'description': 'YOLOv8 based real-time crowd detection and monitoring web application.',
+        "description":
+        "YOLOv8 crowd detection project.",
 
-        'technologies': [
-            'Python',
-            'YOLOv8',
-            'OpenCV',
-            'Flask',
-            'Computer Vision',
-            'HTML',
-            'CSS',
-            'JavaScript'
+        "technologies": [
+            "Python",
+            "YOLOv8",
+            "OpenCV",
+            "Flask"
         ],
 
-        'image': 'crowd.png',
+        "image": "crowd.png",
 
-        'github': 'https://github.com/Har2003sha/Crowd-Management-WebApp-Detect-Live-using-YOLO8.git',
+        "github":
+        "https://github.com/Har2003sha/Crowd-Management-WebApp-Detect-Live-using-YOLO8.git",
 
-        'details': '''
-This AI-powered system detects and monitors crowds in real-time using YOLOv8 and OpenCV.
-        '''
+        "details":
+        "AI based crowd monitoring and live detection system using YOLOv8."
     }
 
 ]
 
-# =========================================================
-# HOME PAGE
-# =========================================================
+# =========================
+# ROUTES
+# =========================
 
 @app.route('/')
-@app.route('/home')
-
 def home():
     return render_template('home.html')
 
 
-# =========================================================
-# INFO PAGE
-# =========================================================
-
-@app.route('/info')
-
-def info():
-    return render_template('info.html')
-
-
-# =========================================================
-# ABOUT PAGE
-# =========================================================
-
-@app.route('/aboutme')
-
-def aboutme():
-    return render_template('aboutme.html')
-
-
-# =========================================================
-# PROJECTS PAGE
-# =========================================================
-
 @app.route('/projects')
-
 def projects_page():
 
     return render_template(
@@ -133,12 +99,7 @@ def projects_page():
     )
 
 
-# =========================================================
-# PROJECT DETAIL PAGE
-# =========================================================
-
 @app.route('/project/<int:project_id>')
-
 def project_detail(project_id):
 
     project = next(
@@ -156,20 +117,24 @@ def project_detail(project_id):
     return "Project Not Found", 404
 
 
-# =========================================================
-# CONTACT PAGE
-# =========================================================
+@app.route('/aboutme')
+def aboutme():
+    return render_template('aboutme.html')
+
 
 @app.route('/contact')
-
 def contact():
     return render_template('contact.html')
 
 
-# =========================================================
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
+
+# =========================
 # RUN APP
-# =========================================================
+# =========================
 
 if __name__ == '__main__':
-
     app.run(debug=True)

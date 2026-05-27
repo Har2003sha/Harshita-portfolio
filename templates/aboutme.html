@@ -1,170 +1,476 @@
 {% extends "base.html" %}
 
-{% block title %}About Me - Ms. Harshita Sharma Portfolio{% endblock %}
+{% block title %}
+About Me - Ms. Harshita Sharma Portfolio
+{% endblock %}
 
 {% block content %}
+
 <div class="container py-5">
+
     <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h1 class="mb-5 text-center fw-bold">About Me</h1>
-            
-            <!-- Personal Introduction -->
-            <div class="card shadow-sm mb-4 border-0">
-                <div class="card-body">
+
+        <div class="col-lg-10 mx-auto">
+
+            <!-- PAGE TITLE -->
+
+            <h1 class="text-center fw-bold mb-5">
+
+                About Me
+
+            </h1>
+
+            <!-- PROFILE SECTION -->
+
+            <div class="card border-0 shadow-lg profile-card mb-5">
+
+                <div class="card-body p-5">
+
                     <div class="row align-items-center">
-                        <div class="col-md-4 text-center mb-4 mb-md-0">
-                            <div class="profile-avatar">
-                                <i class="bi bi-person-circle display-1 text-warning"></i>
-                            </div>
+
+                        <!-- PROFILE IMAGE -->
+
+                        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+
+                            <img
+                                src="{{ url_for('static', filename='images/Harshu.png') }}"
+                                alt="Harshita Sharma"
+                                class="profile-image img-fluid"
+                            >
+
                         </div>
-                        <div class="col-md-8">
-                            <h3 class="fw-bold mb-2"> Ms. Harshita Sharma </h3>
-                            <h5 class="text-warning mb-3">Jr. Data Scientist</h5>
-                            <p class="lead">
-                                I am a passionate Jr. Data Scientist focused on cutting-edge technology and data-driven solutions. With over three years of industry experience, I have successfully delivered multiple high-impact projects.
+
+                        <!-- PROFILE CONTENT -->
+
+                        <div class="col-lg-8">
+
+                            <h2 class="fw-bold mb-2">
+
+                                Ms. Harshita Sharma
+
+                            </h2>
+
+                            <h4 class="text-warning mb-4">
+
+                                Jr. Data Scientist
+
+                            </h4>
+
+                            <p class="lead text-muted">
+
+                                I am a passionate Jr. Data Scientist focused on
+                                cutting-edge technology and data-driven solutions.
+
+                                With strong hands-on experience in Machine Learning,
+                                Data Analytics, Artificial Intelligence and Full Stack Python,
+                                I love building impactful and innovative projects.
+
                             </p>
+
+                            <!-- BUTTONS -->
+
+                            <div class="mt-4">
+
+                                <a href="/projects"
+                                   class="btn btn-warning btn-lg me-3">
+
+                                    <i class="bi bi-briefcase-fill"></i>
+                                    View Projects
+
+                                </a>
+
+                                <a href="/contact"
+                                   class="btn btn-dark btn-lg">
+
+                                    <i class="bi bi-envelope-fill"></i>
+                                    Contact Me
+
+                                </a>
+
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- My Journey -->
-            <div class="card shadow-sm mb-4 border-0">
-                <div class="card-body">
-                    <h4 class="fw-bold mb-4 text-warning">
-                        <i class="bi bi-rocket"></i> My Journey
-                    </h4>
-                    <p>
-                    My Data Science journey started with curiosity, where I realized the immense potential hidden inside data.
-That curiosity motivated me to continuously upgrade my skills, learn new tools and technologies, and work on real-world problems.
-Over time, I gained hands-on experience in Machine Learning, Data Analytics, and AI-based projects, which strengthened both my technical and problem-solving abilities.
-My focus has always been on practical learning, innovation, and building impactful solutions.
- 
+            <!-- MY JOURNEY -->
+
+            <div class="card shadow-sm border-0 mb-5">
+
+                <div class="card-body p-5">
+
+                    <h3 class="fw-bold text-warning mb-4">
+
+                        <i class="bi bi-rocket-takeoff-fill"></i>
+                        My Journey
+
+                    </h3>
+
+                    <p class="text-muted">
+
+                        My Data Science journey started with curiosity,
+                        where I realized the immense potential hidden inside data.
+
+                        That curiosity motivated me to continuously upgrade my skills,
+                        learn new tools and technologies, and work on real-world problems.
+
                     </p>
-                    <p>
-                    Today, I am growing my career as a Junior Data Scientist, where I focus on providing data-driven insights and building impactful solutions to solve real-world problems.
+
+                    <p class="text-muted">
+
+                        Over time, I gained hands-on experience in Machine Learning,
+                        Data Analytics, AI-based systems, and Full Stack Development,
+                        which strengthened both my technical and problem-solving abilities.
+
                     </p>
+
+                    <p class="text-muted mb-0">
+
+                        Today, I am growing my career as a Junior Data Scientist,
+                        focused on creating impactful and intelligent solutions.
+
+                    </p>
+
                 </div>
+
             </div>
 
-            <!-- Passion & Vision -->
-            <div class="card shadow-sm mb-4 border-0">
-                <div class="card-body">
-                    <h4 class="fw-bold mb-4 text-warning">
-                        <i class="bi bi-fire"></i> Passion & Vision
-                    </h4>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <h6 class="fw-bold">My Passion</h6>
-                            <p>
-                               Solving new challenges and creating innovative solutions in the field of Data Science is my passion.
-I am always eager to learn new tools and techniques so that I can deliver the best possible results for clients and real-world applications.
+            <!-- PASSION & VISION -->
+
+            <div class="row">
+
+                <div class="col-md-6 mb-4">
+
+                    <div class="card shadow-sm border-0 h-100">
+
+                        <div class="card-body p-4">
+
+                            <h3 class="fw-bold text-warning mb-4">
+
+                                <i class="bi bi-fire"></i>
+                                My Passion
+
+                            </h3>
+
+                            <p class="text-muted">
+
+                                Solving new challenges and creating innovative
+                                solutions in Data Science is my passion.
+
+                                I am always eager to learn new technologies
+                                and build real-world intelligent systems.
+
                             </p>
+
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <h6 class="fw-bold">My Vision</h6>
-                            <p>
-                                 My vision is to become a leading Data Scientist who can leverage data to drive meaningful insights and create impactful solutions that can make a difference in the world.
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 mb-4">
+
+                    <div class="card shadow-sm border-0 h-100">
+
+                        <div class="card-body p-4">
+
+                            <h3 class="fw-bold text-warning mb-4">
+
+                                <i class="bi bi-stars"></i>
+                                My Vision
+
+                            </h3>
+
+                            <p class="text-muted">
+
+                                My vision is to become a leading Data Scientist
+                                who can leverage data to generate meaningful insights
+                                and create impactful AI-driven solutions.
+
                             </p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Skills Showcase -->
-            <div class="card shadow-sm mb-4 border-0">
-                <div class="card-body">
-                    <h4 class="fw-bold mb-4 text-warning">
-                        <i class="bi bi-lightning-charge"></i> Skills & Expertise
-                    </h4>
-                    
-                    <div class="mb-4">
-                        <h6 class="fw-bold mb-2">Data Analysis & Visualization</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 95%">95%</div>
-                        </div>
-                    </div>
+            <!-- SKILLS -->
+
+            <div class="card shadow-sm border-0 mb-5">
+
+                <div class="card-body p-5">
+
+                    <h3 class="fw-bold text-warning mb-5">
+
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        Skills & Expertise
+
+                    </h3>
+
+                    <!-- Skill -->
 
                     <div class="mb-4">
-                        <h6 class="fw-bold mb-2">Machine Learning & AI</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 88%">88%</div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <h6 class="fw-bold">
+                                Data Analysis & Visualization
+                            </h6>
+
+                            <span>95%</span>
+
                         </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar bg-warning"
+                                 style="width:95%">
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="mb-4">
-                        <h6 class="fw-bold mb-2">Python & Statistical Analysis</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 92%">92%</div>
-                        </div>
-                    </div>
+                    <!-- Skill -->
 
                     <div class="mb-4">
-                        <h6 class="fw-bold mb-2">SQL & Database Design</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 90%">90%</div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <h6 class="fw-bold">
+                                Machine Learning & AI
+                            </h6>
+
+                            <span>88%</span>
+
                         </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar bg-warning"
+                                 style="width:88%">
+
+                            </div>
+
+                        </div>
+
                     </div>
 
+                    <!-- Skill -->
+
                     <div class="mb-4">
-                        <h6 class="fw-bold mb-2">Business Intelligence Tools</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 85%">85%</div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <h6 class="fw-bold">
+                                Python & Full Stack Development
+                            </h6>
+
+                            <span>90%</span>
+
                         </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar bg-warning"
+                                 style="width:90%">
+
+                            </div>
+
+                        </div>
+
                     </div>
+
+                    <!-- Skill -->
+
                     <div class="mb-4">
-                        <h6 class="fw-bold mb-2">Full Stack Python</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 85%">85%</div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <h6 class="fw-bold">
+                                SQL & Database Design
+                            </h6>
+
+                            <span>85%</span>
+
                         </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar bg-warning"
+                                 style="width:85%">
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Why Work With Me -->
-            <div class="card shadow-sm mb-4 border-0 bg-light">
-                <div class="card-body">
-                    <h4 class="fw-bold mb-4 text-warning">
-                        <i class="bi bi-hand-thumbs-up"></i> Why Work With Me?
-                    </h4>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="feature-item">
-                                <h6><i class="bi bi-check-circle text-success"></i> Proven Track Record</h6>
-                                <p class="text-muted small">220+ successful projects delivered with quality and efficiency</p>
-                            </div>
+            <!-- WHY WORK WITH ME -->
+
+            <div class="card border-0 shadow-lg bg-dark text-light mb-5">
+
+                <div class="card-body p-5">
+
+                    <h3 class="fw-bold text-warning mb-5 text-center">
+
+                        Why Work With Me?
+
+                    </h3>
+
+                    <div class="row text-center">
+
+                        <div class="col-md-4 mb-4">
+
+                            <i class="bi bi-check-circle-fill text-warning display-5"></i>
+
+                            <h5 class="mt-3 fw-bold">
+
+                                Technical Excellence
+
+                            </h5>
+
+                            <p>
+
+                                Strong knowledge of modern technologies,
+                                frameworks and AI tools.
+
+                            </p>
+
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="feature-item">
-                                <h6><i class="bi bi-check-circle text-success"></i> Technical Excellence</h6>
-                                <p class="text-muted small">Experienced with modern tools, technologies, and best practices</p>
-                            </div>
+
+                        <div class="col-md-4 mb-4">
+
+                            <i class="bi bi-lightbulb-fill text-warning display-5"></i>
+
+                            <h5 class="mt-3 fw-bold">
+
+                                Innovative Solutions
+
+                            </h5>
+
+                            <p>
+
+                                Focused on solving real-world problems
+                                through intelligent systems.
+
+                            </p>
+
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="feature-item">
-                                <h6><i class="bi bi-check-circle text-success"></i> Client-Focused</h6>
-                                <p class="text-muted small">Dedicated to delivering solutions that create real value for clients</p>
-                            </div>
+
+                        <div class="col-md-4 mb-4">
+
+                            <i class="bi bi-chat-dots-fill text-warning display-5"></i>
+
+                            <h5 class="mt-3 fw-bold">
+
+                                Communication
+
+                            </h5>
+
+                            <p>
+
+                                Clear communication and collaborative mindset
+                                for successful project delivery.
+
+                            </p>
+
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="feature-item">
-                                <h6><i class="bi bi-check-circle text-success"></i> Communication</h6>
-                                <p class="text-muted small">Able to explain complex concepts in a simple and clear way</p>
-                            </div>
-                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Call to Action -->
+            <!-- CTA -->
+
             <div class="text-center">
-                <h4 class="mb-4">Let's Connect!</h4>
-                <p class="mb-4">I would love to hear about your projects, ideas, and opportunities to collaborate.</p>
-                <a href="/contact" class="btn btn-warning btn-lg">
-                    <i class="bi bi-envelope"></i> Contact Me
+
+                <h2 class="fw-bold mb-4">
+
+                    Let's Connect
+
+                </h2>
+
+                <p class="lead text-muted mb-4">
+
+                    I would love to collaborate on innovative projects
+                    and exciting opportunities.
+
+                </p>
+
+                <a href="/contact"
+                   class="btn btn-warning btn-lg px-5">
+
+                    <i class="bi bi-envelope-fill"></i>
+                    Contact Me
+
                 </a>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
+<style>
+
+body{
+    background:#f5f7fb;
+}
+
+.profile-card{
+    border-radius:25px;
+}
+
+.profile-image{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid #ffc107;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.profile-image:hover{
+    transform:scale(1.05);
+}
+
+.card{
+    border-radius:25px;
+}
+
+.progress{
+    height:14px;
+    border-radius:20px;
+}
+
+.progress-bar{
+    border-radius:20px;
+}
+
+.btn{
+    border-radius:12px;
+    font-weight:600;
+    padding:12px 28px;
+}
+
+</style>
+
 {% endblock %}
